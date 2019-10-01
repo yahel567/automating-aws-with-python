@@ -1,0 +1,16 @@
+pipenv run ipython
+
+inside ipython:
+import boto3
+session = boto3.Session(profile_name='pythonAutomation')  
+s3 = session.resource('s3')  
+
+list our s3 buckets:
+for bucket in s3.buckets.all():
+	print(bucket)
+
+create bucket in CLI:
+aws s3 mb s3://yahelatomation-commandline --profile pythonAutomation
+
+create bucket with python:
+new_bucket = s3.create_bucket(Bucket='yahelautomation-boto3', CreateBucketConfiguration={'LocationConstraint': 'us-east-2'})
