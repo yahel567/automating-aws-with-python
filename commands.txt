@@ -1,3 +1,4 @@
+git location: https://github.com/yahel567/automating-aws-with-python
 pipenv run ipython
 
 inside ipython:
