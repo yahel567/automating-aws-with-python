@@ -1,8 +1,13 @@
 Git:
 git location: https://github.com/yahel567/automating-aws-with-python
-pipenv run ipython
 
-inside ipython:
+pipenv - virtual python --> how to run:
+pipenv shell - kind of install the python env.
+pipenv run
+
+C:\code\automating-aws-with-python\01-webotron>  
+ipython:
+pipenv run ipython
 %history
 save lines 1-10:
 %save ipythonsession.py 1-10
@@ -26,4 +31,11 @@ new_bucket = s3.create_bucket(Bucket='yahelautomation-boto3', CreateBucketConfig
 Client (will shows us the option there are):
 https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/ec2.html?highlight=client%20ec2#client
 ec2_client = session.client('ec2')
-ec2_client.allocate_ 
+ec2_client.allocate_
+
+#################
+new_bucket.upload_file('index.html', 'index.html', ExtraArgs={'ContentType': 'text/html'} )
+
+
+
+
