@@ -1,2 +1,7 @@
 # automating-aws-with-python
-test 123
+Features:
+YahelScript current has the following features:
+
+- List bucket
+- List contents a a bucket
+- Create and setup a new bucket
