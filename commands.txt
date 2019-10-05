@@ -2,7 +2,7 @@ Git:
 git location: https://github.com/yahel567/automating-aws-with-python
 
 pipenv - virtual python --> how to run:
-pipenv shell - kind of install the python env.
+pipenv shell - bring the shell of pipenv
 pipenv run
 
 C:\code\automating-aws-with-python\01-webotron>  
