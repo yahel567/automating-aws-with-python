@@ -24,9 +24,11 @@ ami_name = 'Deep Learning AMI (Ubuntu) Version 18.0'
 instances = ec2.create_instances(ImageId=img.id, MinCount=1, MaxCount=1, InstanceType='t2.micro', KeyName=key.key_name)
 instances
 inst = instances[0]
+
+inst.wait_until_running()
 # create public DNS for mention instance
 inst.public_dns_name
-inst.wait_until_running()
+
 inst.reload()
 # show the public url that you've got
 inst.public_dns_name
@@ -40,3 +42,21 @@ sg.authorize_ingress(IpPermissions=[{'FromPort': 80, 'ToPort': 80, 'IpProtocol':
 'TCP', 'IpRanges': [{'CidrIp': '0.0.0.0/0'}]}])
 # delete the instance
 inst.terminate()
+
+#chekc if an instance is running sut it down:
+if (inst.state['Name']) == 'running':
+    inst.stop()
+
+restart to an instance:
+inst.reboot()
+
+create tags to an instance:
+inst.create_tags (
+
+    Tags=[
+        {
+            'Key': 'Name',
+            'Value': 'test1'
+        },
+    ]
+)
